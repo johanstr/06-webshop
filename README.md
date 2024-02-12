@@ -1,4 +1,18 @@
-# Module 06 - Webshop | Design  
-In één van de fasen in de voorbereiding van een project bouwen we alvast alle pagina's, met uitsluitend HTML en CSS, die later in de webapplicatie een rol gaan spelen.  
-Hiermee voorkomen we dat we tijdens het programmeren met PHP ons nog steeds bezig moeten houden met het ontwerpen van pagina's, HTML en CSS. Dit leidt alleen maar af. De HTML code in deze map zullen we in een andere map (waarin we met PHP de echte webapplicatie gaan bouwen) hergebruiken met knippen en plakken. Mappen zoals **css**, **fonts**, **img** en **js** kunnen we echter in z'n geheel kopiëren naar de map waarin we de webapplicatie gaan bouwen. Als we alles goed hebben gedaan hoeven we hier niks meer aan te veranderen namelijk.  
+# Module 06 - Webshop  
+Als voorbeeld project wordt met jullie samen een webshop gebouwd. Let wel, het is slechts een simulatie. Dit betekent dat niet alle functionaliteit tijdens de instructies zal worden gebouwd.
   
+## In deze module leer je:  
+* De programmeertaal PHP kennen  
+  Dit is één van de vele talen om webapplicaties mee te bouwen.
+* Hoe je een groter project gestructureerd kunt aanpakken.  
+* Hoe je met HTML, CSS, PHP en eventueel JavaScript een complete webapplicatie kunt bouwen
+* ... en meer ...  
+  
+## Wat vind je in deze repository?  
+In deze repository vind je twee mappen, namelijk:  
+  
+* design  
+  In deze map hebben we met HTML en CSS alle pagina's al gebouwd. Dit is voorwerk, want tijdens het 'echt' programmeren willen we namelijk ons niet meer bezig hoeven houden met het ontwerpen en bouwen van de verschillende pagina's. 
+* dev  
+  Dit is de map waarin we met PHP de webshop ook 'echt' gaan programmeren. Oftewel alle functionaliteit voegen we toe en we gaan programmeren dat we gegevens in een database kunnen opslaan.
+
