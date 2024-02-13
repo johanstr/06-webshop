@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Europe/Amsterdam');
 
 @include_once(__DIR__ . '/src/Helpers/Auth.php');
 @include_once(__DIR__ . '/src/Helpers/Message.php');
@@ -51,6 +52,28 @@ Database::query("UPDATE `cart` SET `cart`.`ordered` = 1, `cart`.`updated_at` = :
    ':cart_id' => $cart_items[0]->cart_id,
    ':today' => date("Y-m-d H:i:s")
 ]);
+
+// We gaan er nu in de database een order van maken
+// Stap 1 - Order aanmaken en koppelen aan customer
+Database::query("INSERT INTO `orders`(`orders`.`customer_id`, `orders`.`order_date`) VALUES(:user_id, :order_date)",[
+   ':user_id' => user_id(),
+   ':order_date' => date("Y-m-d H:i:s")
+]);
+
+$new_order_id = Database::lastInserted();
+// Stap 2 - Order items toevoegen
+foreach($cart_items as $cart_item) {
+   Database::query("INSERT INTO `order_items`(
+         `order_items`.`order_id`,
+         `order_items`.`product_id`,
+         `order_items`.`amount`)
+      VALUES(:order_id, :product_id, :amount)",[
+         ':order_id' => $new_order_id,
+         ':product_id' => $cart_item->product_id,
+         ':amount' => $cart_item->amount
+      ]);
+}
+
 // Hierna zal de winkelwagen die we zien op de website leeg zijn
 ?>
 
