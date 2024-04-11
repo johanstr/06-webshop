@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Webshop De Witte Kip</title>
+
+      <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+      <link rel="manifest" href="img/site.webmanifest">
+
+      <link rel="stylesheet" href="css/uikit.min.css">
+      <link rel="stylesheet" href="css/style.css">
+
+   </head>
+
+   <body>
+      <nav class="uk-navbar-container">
+         <div class="uk-container">
+            <div uk-navbar>
+
+                  <div class="uk-navbar-left">
+                     <ul class="uk-navbar-nav">
+                        <li>
+                           <a href="/">
+                              <img class="logo" src="img/logo4.png" alt="Webshop Het Witte Kippetje" title="Webshop Het Witte Kippetje" />
+                              Het Witte Kippetje
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div class="uk-navbar-right">
+
+                     <ul class="uk-navbar-nav">
+                        <li><a href="/"><span uk-icon="icon: home"></span>Home</a></li>
+                        <li><a href="login.html"><span uk-icon="icon: sign-in"></span>Inloggen</a></li>
+                        <li class="uk-active"><a href="register.html"><span uk-icon="icon: file-edit"></span>Registreren</a></li>
+                        <li>
+                           <a href="cart.html">
+                              <span uk-icon="icon: cart"></span>
+                              Winkelwagen
+                              <span id="cart_amount_indicator" class="uk-badge">0</span>
+                           </a>
+                        </li>
+                        <li>
+                              <a href="#"><span uk-icon="icon: user"></span>Welkom Johan <span uk-navbar-parent-icon></span></a>
+                              <div class="uk-navbar-dropdown">
+                                 <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li class="uk-nav-header">Uw gegevens</li>
+                                    <li><a href="#"><span uk-icon="icon: settings"></span>Profiel</a></li>
+                                    <li><a href="#"><span uk-icon="icon: bag"></span>Bestellingen</a></li>
+                                    <li><a href="#"><span uk-icon="icon: credit-card"></span>Facturen</a></li>
+                                    <li><a href="#"><span uk-icon="icon: refresh"></span>Retouren</a></li>
+                                    <li><a href="#"><span uk-icon="icon: heart"></span>Wensenlijst</a></li>
+                                    <li class="uk-nav-header">Contact</li>
+                                    <li><a href="#"><span uk-icon="icon: info"></span>Klantenservice</a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li><a href="#"><span uk-icon="icon: sign-out"></span>Uitloggen</a></li>
+                                 </ul>
+                              </div>
+                        </li>
+                     </ul>
+
+                  </div>
+            </div>
+         </div>
+      </nav>
+
+      <main class="uk-container uk-padding uk-flex uk-flex-middle uk-flex-center">
+         <form method="POST" action="" class="uk-width-1-1 uk-flex uk-flex-center">
+            <div class="uk-card uk-card-default uk-width-4-5 uk-padding-small">
+               <div class="uk-card-header uk-flex uk-gap">
+                  <img src="img/logo4.png" class="uk-card-media uk-card-register-logo" alt="Webshop Het Witte Kippetje" title="Webshop Het Witte Kippetje" />
+                  <h2 class="uk-text-uppercase uk-margin-remove-top">Registreren</h2>
+               </div>
+               <div class="uk-alert-danger" uk-alert>
+                  <a href class="uk-alert-close" uk-close></a>
+                  <p>Algemene foutmelding als tijdens de registratie iets niet goed gegaan is</p>
+               </div>
+               <div class="uk-card-body uk-flex uk-flex-between uk-card-body-gap">
+                  <div class="uk-width-1-1 uk-flex uk-flex-column">
+                     <div class="">
+                        <label for="firstname" class="uk-form-label">Voornaam<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                        <input type="text" name="firstname" class="uk-input" id="firstname" placeholder="Voornaam..." />
+                        <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als dit veld niet ingevuld is</p>
+                     </div>
+                     <div class="uk-flex uk-gap uk-margin-top">
+                        <div class="uk-width-1-5">
+                           <label for="prefixes" class="uk-form-label">Tussenvoegsels</label>
+                           <input type="text" name="prefixes" class="uk-input" id="prefixes" placeholder="Tussenvoegsels..." />
+                        </div>
+                        <div class="uk-width-4-5">
+                           <label for="lastname" class="uk-form-label">Achternaam<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                           <input type="text" name="lastname" class="uk-input" id="lastname" placeholder="Achternaam..." />
+                           <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als dit veld niet ingevuld is</p>
+                        </div>
+                     </div>
+                     
+                     <div class="uk-flex uk-gap uk-margin-top">
+                        <div class="uk-width-3-5">
+                           <label for="street" class="uk-form-label">Straatnaam<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                           <input type="text" name="street" class="uk-input" id="street" placeholder="Straatnaam..." />
+                           <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als dit veld niet ingevuld is</p>
+                        </div>
+                        <div class="uk-width-1-5">
+                           <label for="housenumber" class="uk-form-label">Huisnummer<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                           <input type="text" name="housenumber" class="uk-input" id="housenumber" placeholder="Huisnummer..." />
+                           <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als dit veld niet ingevuld is</p>
+                        </div>
+                        <div class="uk-width-1-5">
+                           <label for="addition" class="uk-form-label">Toevoeging</label>
+                           <input type="text" name="addition" class="uk-input" id="addition" placeholder="Toevoeging..." />
+                        </div>
+                     </div>
+                     <div class="uk-flex uk-gap uk-margin-top">
+                        <div class="uk-width-1-5">
+                           <label for="zipcode" class="uk-form-label">Postcode<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                           <input type="text" name="zipcode" class="uk-input" id="zipcode" placeholder="Postcode..." />
+                           <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als dit veld niet ingevuld is</p>
+                        </div>
+                        <div class="uk-width-4-5">
+                           <label for="city" class="uk-form-label">Plaats<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                           <input type="text" name="city" class="uk-input" id="city" placeholder="Plaats..." />
+                           <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als dit veld niet ingevuld is</p>
+                        </div>
+                     </div>
+                     <div class="uk-margin-top">
+                        <label for="email" class="uk-form-label">Email<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                        <input type="email" name="email" class="uk-input" id="email" placeholder="E-mail adres..." />
+                        <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als dit veld niet ingevuld is</p>
+                     </div>
+                     <div class="uk-margin-top">
+                        <label for="password" class="uk-form-label">Wachtwoord<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                        <input type="password" name="password" class="uk-input" id="password" placeholder="Wachtwoord..." />
+                        <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als dit veld niet ingevuld is</p>
+                     </div>
+                     <div class="uk-margin-top">
+                        <label for="password-confirm" class="uk-form-label">Wachtwoord controle<span class="uk-text-xsmall uk-text-italic uk-text-primary"> (Verplicht)</span></label>
+                        <input type="password" name="password_confirm" class="uk-input" id="password-confirm" placeholder="Voer het wachtwoord nog eens in ter controle..." />
+                        <p class="uk-text-danger uk-text-xsmall uk-text-italic uk-margin-remove-vertical">Bericht als beide wachtwoorden niet overeenkomen</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="uk-card-footer uk-flex uk-flex-between">
+                  <a href="login.html" class="">Inloggen</a>
+                  <button class="uk-button uk-button-primary" type="submit">Registreren</button>
+               </div>
+            </div>
+         </form>
+      </main>
+      
+      <script src="js/uikit.min.js"></script>
+      <script src="js/uikit-icons.min.js"></script>
+   </body>
+</html>

@@ -1,0 +1,74 @@
+.logo {
+   height: 40px;
+}
+
+.product-image {
+   width: 206px;
+   height: 206px;
+}
+
+.product-card, .product-card-p {
+   text-decoration: none !important;
+   color: #666;
+}
+
+.uk-card-home, .uk-card-body-home {
+   width: 300px;
+}
+
+.uk-card-body-home > p {
+   max-width: 250px;
+}
+
+.uk-card-body-home > p:first-child {
+   min-height: 72px;
+}
+
+.uk-flex-home, .uk-cart-gap, .uk-card-body-gap {
+   gap: 1rem;
+}
+
+.product-view__price {
+   font-size: 2.5rem;
+   margin: 0;
+}
+
+.uk-text-xsmall {
+   font-size: .5rem;
+   line-height: 1.5;
+}
+
+.uk-link-cart-trash {
+   text-decoration: none !important;
+}
+
+.uk-link-cart-trash:hover {
+   color: #760a1e !important;
+}
+
+.uk-text-medium {
+   font-size: 1.2rem !important;
+   line-height: 1.5;
+}
+
+.uk-card-body-login-logo {
+   width: 200px !important;
+}
+
+.uk-card-register-logo {
+   width: 30px;
+   height: 35px;
+}
+
+.uk-gap {
+   gap: 1rem;
+}
+
+.uk-order-confirm-img {
+   width: 30px !important;
+
+}
+
+.order-confirm-table tbody tr:last-child, tfoot tr:nth-child(2) {
+   border-bottom: 3px solid #e5e5e5 !important;
+}
