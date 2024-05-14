@@ -1,5 +1,7 @@
 # Module 06 - Webshop  
 Als voorbeeld project wordt met jullie samen een webshop gebouwd. Let wel, het is slechts een simulatie. Dit betekent dat niet alle functionaliteit tijdens de instructies zal worden gebouwd.
+
+Verder zijn er keuzes gemaakt in de manier van programmeren die niet aan te bevelen zijn voor een echt project, maar alleen maar gekozen zijn ten behoeve van het doel van de module.
   
 ## In deze module leer je:  
 * De programmeertaal PHP kennen  
