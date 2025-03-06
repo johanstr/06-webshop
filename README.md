@@ -1,23 +1,22 @@
-# Module 06 - Webshop  
-Als voorbeeld project wordt met jullie samen een webshop gebouwd. Let wel, het is slechts een simulatie. Dit betekent dat niet alle functionaliteit tijdens de instructies zal worden gebouwd.
+# Module 06 - Webshop | Dev  
+## Inleiding
+Dit is de map waarin we met PHP een 'echte' webapplicatie gaan programmeren. In deze map zien we niet alleen de mappen **css**, **fonts**, **img** en **js** terug, zoals deze in de ***design*** map zijn te vinden.  
+  
+Maar ook mappen die speciaal voor het programmeren in PHP worden aangemaakt. Zoals de map **src**.  
+  
+In de root van de ***dev*** map plaatsen we alle PHP-bestanden die een pagina laten zien. In de map ***src*** plaatsen we alle PHP-bestanden waarin code staat die op de achtergrond allerlei taken uitvoeren ten behoeven van b.v. de pagina's.  
+  
+### template (speciale map)
+Je ziet echter ook nog de map ***template***. In deze map plaatsen we in speciale PHP-bestanden de stukken HTML-code die voor iedere pagina in onze webapplicatie hetzelfde is.  
+Zodoende krijgen we twee bestanden, namelijk:  
+  
+* head.inc.php  
+  In dit bestand vinden we de HTML-code terug waarmee iedere pagina van onze applicatie start.  
+* foot.inc.php  
+  In dit bestand komt het onderste deel van de HTML-code die op iedere pagina hetzelfde is.  
 
-Verder zijn er keuzes gemaakt in de manier van programmeren die niet aan te bevelen zijn voor een echt project, maar alleen maar gekozen zijn ten behoeve van het doel van de module.
+Door dit te doen hoeven we deze code voor iedere pagina niet steeds opnieuw te knippen en plakken. En we maken het onszelf makkelijker wanneer we in deze code iets willen aanpassen zodat het voor iedere pagina geldt. We hoeven dit nu slechts op 1 plek te doen en automatische geldt het dan voor iedere pagina.  
   
-## In deze module leer je:  
-* De programmeertaal PHP kennen  
-  Dit is één van de vele talen om webapplicaties mee te bouwen.
-* Hoe je een groter project gestructureerd kunt aanpakken.  
-* Hoe je met HTML, CSS, PHP en eventueel JavaScript een complete webapplicatie kunt bouwen
-* ... en meer ...  
-  
-## Wat vind je in deze repository?  
-In deze repository vind je twee mappen, namelijk:  
-  
-* design  
-  In deze map hebben we met HTML en CSS alle pagina's al gebouwd. Dit is voorwerk, want tijdens het 'echt' programmeren willen we namelijk ons niet meer bezig hoeven houden met het ontwerpen en bouwen van de verschillende pagina's. 
-* dev  
-  Dit is de map waarin we met PHP de webshop ook 'echt' gaan programmeren. Oftewel alle functionaliteit voegen we toe en we gaan programmeren dat we gegevens in een database kunnen opslaan.
-
 ## Lokaal installeren
 Om deze voorbeeld applicatie lokaal op je computer te installeren en het werkend te krijgen voer je de onderstaande stappen uit.  
   
@@ -30,7 +29,7 @@ Voor de onderstaande stappen gaan we ervan uit dat de volgende applicaties zijn 
 En we gaan ervan uit dat we werken met het Windows besturingssysteem.  
   
 ### Stap 1 - Database aanmaken  
-Met b.v. PhpMyAdmin gaan we de database aanmaken. We maken nog geen tabellen etc. aan. De naam van de database die gebruikt wordt in de applicatie is ***2324_wittekip***.  
+Met b.v. **PhpMyAdmin** gaan we de database aanmaken. We maken nog geen tabellen etc. aan. De naam van de database die gebruikt wordt in de applicatie is ***2324_wittekip***.  
   
 ### Stap 2 - Installeren code  
 In de rootmap van de geïnstalleerde applicatie (XAMPP of WAMP b.v.) openen we de terminal (CMD, PowerShell, Git Bash) en tikken de volgende opdracht in:  
@@ -44,7 +43,7 @@ Hiermee installeren we de gehele code van de applicatie in de map ***06-webshop*
 ### Stap 3 - Aanpassen Database credentials in PHP code
 We passen nu de credentials aan in het volgende bestand:  
   
-**06-webshop/dev/src/Database/Database.php**   
+> **06-webshop/dev/src/Database/Database.php**  
   
 Onderstaande fields in de class Database moeten we dan aanpassen:
 ```php
@@ -55,9 +54,9 @@ Onderstaande fields in de class Database moeten we dan aanpassen:
 ```
   
 ### Stap 4 - Importeren tabellen en testgegevens
-We importeren nu de tabellen en de testgegevens. Daarvoor is in de map ***06-webshop/dev*** een SQL-script beschikbaar met de naam:  
+We importeren nu de tabellen en de testgegevens. Daarvoor is in de map ***06-webshop*** een SQL-script beschikbaar met de naam:  
   
-**2324_wittekip.sql**  
+> **2324_wittekip.sql**  
   
 ### Stap 5 - [OPTIONEEL] Maak lokaal een domeinnaam aan
 We kunnen voor ons gemak lokaal een domeinnaam aanmaken, daarvoor heb je twee bestanden nodig, namelijk:  
@@ -65,17 +64,17 @@ We kunnen voor ons gemak lokaal een domeinnaam aanmaken, daarvoor heb je twee be
 1. C:\Windows\System32\drivers\etc\hosts  
    Dit bestand moet wel als Administrator in een teksteditor geopend worden.  Hierin tikken onderin het bestand we het volgende in:  
      
-   ***127.0.0.1    wittekip.local***  
+   > ***127.0.0.1    wittekip.local***  
      
    Maar let op, als er nog niet eerder op deze manier een lokale domeinnaam is toegevoegd dan moet als eerste regel de volgende boven de net eigen gemaakte staan:  
      
-   ***127.0.0.1    localhost***  
+   > ***127.0.0.1    localhost***  
      
    En we slaan nu het bestand op.  
 
 2. Het tweede bestand nodig is (afhankelijk van de geïnstalleerde applicatie, XAMPP of WAMP, we nemen als voorbeeld XAMPP):  
      
-   ***c:\xampp\apache\conf\extra\httpd_vhosts.conf*** 
+   > ***c:\xampp\apache\conf\extra\httpd_vhosts.conf*** 
      
    In dit bestand voeg je onderaan het volgende toe:  
      
@@ -93,7 +92,7 @@ We kunnen voor ons gemak lokaal een domeinnaam aanmaken, daarvoor heb je twee be
          DocumentRoot "c:\xampp\htodcs"
          ServerName localhost
       </VirtualHost>
-   ``` 
+   ```  
    
 De volgende stap is dat je de Apache webserver herstart. Dit is nodig zodat de Apache webserver de zojuist aangepaste httpd_vhosts.conf configuratie file kan toepassen.  
   
