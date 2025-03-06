@@ -60,13 +60,13 @@
                         <div class="uk-navbar-dropdown">
                            <ul class="uk-nav uk-navbar-dropdown-nav">
                               <li class="uk-nav-header">Uw gegevens</li>
-                              <li><a href="#"><span uk-icon="icon: settings"></span>Profiel</a></li>
-                              <li><a href="#"><span uk-icon="icon: bag"></span>Bestellingen</a></li>
-                              <li><a href="#"><span uk-icon="icon: credit-card"></span>Facturen</a></li>
-                              <li><a href="#"><span uk-icon="icon: refresh"></span>Retouren</a></li>
-                              <li><a href="#"><span uk-icon="icon: heart"></span>Wensenlijst</a></li>
+                              <li><a href="profile.php"><span uk-icon="icon: settings"></span>Profiel</a></li>
+                              <li><a href="orderlist.php"><span uk-icon="icon: bag"></span>Bestellingen</a></li>
+                              <li><a href="invoicelist.php"><span uk-icon="icon: credit-card"></span>Facturen</a></li>
+                              <li><a href="returnlist.php"><span uk-icon="icon: refresh"></span>Retouren</a></li>
+                              <li><a href="favorites.php"><span uk-icon="icon: heart"></span>Wensenlijst</a></li>
                               <li class="uk-nav-header">Contact</li>
-                              <li><a href="#"><span uk-icon="icon: info"></span>Klantenservice</a></li>
+                              <li><a href="customerservice.php"><span uk-icon="icon: info"></span>Klantenservice</a></li>
                               <li class="uk-nav-divider"></li>
                               <li>
                                  <form method="POST" action="logout.php" id="logout-form" style="display: none;">
