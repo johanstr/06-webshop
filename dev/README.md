@@ -43,7 +43,7 @@ Hiermee installeren we de gehele code van de applicatie in de map ***06-webshop*
 ### Stap 3 - Aanpassen Database credentials in PHP code
 We passen nu de credentials aan in het volgende bestand:  
   
-**06-webshop/src/Database/Database.php**  
+**06-webshop/dev/src/Database/Database.php**  
   
 ### Stap 4 - Importeren tabellen en testgegevens
 We importeren nu de tabellen en de testgegevens. Daarvoor is in de map ***06-webshop*** een SQL-script beschikbaar met de naam:  
@@ -72,7 +72,7 @@ We kunnen voor ons gemak lokaal een domeinnaam aanmaken, daarvoor heb je twee be
      
    ```apache
       <VirtualHost *:80>
-         DocumentRoot "c:/xampp/htdocs/06-webshop"
+         DocumentRoot "c:/xampp/htdocs/06-webshop/dev"
          ServerName wittekip.local
       </VirtualHost>
    ```
