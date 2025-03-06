@@ -44,7 +44,15 @@ Hiermee installeren we de gehele code van de applicatie in de map ***06-webshop*
 ### Stap 3 - Aanpassen Database credentials in PHP code
 We passen nu de credentials aan in het volgende bestand:  
   
-**06-webshop/dev/src/Database/Database.php**  
+**06-webshop/dev/src/Database/Database.php**   
+  
+Onderstaande fields in de class Database moeten we dan aanpassen:
+```php
+      private static $dbHost = "127.0.0.1";
+      private static $dbName = "2324_wittekip";
+      private static $dbUser = "root";
+      private static $dbPassword = "root";
+```
   
 ### Stap 4 - Importeren tabellen en testgegevens
 We importeren nu de tabellen en de testgegevens. Daarvoor is in de map ***06-webshop/dev*** een SQL-script beschikbaar met de naam:  
