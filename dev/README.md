@@ -92,4 +92,8 @@ We kunnen voor ons gemak lokaal een domeinnaam aanmaken, daarvoor heb je twee be
          DocumentRoot "c:\xampp\htodcs"
          ServerName localhost
       </VirtualHost>
-   ```
+   ```  
+   
+De volgende stap is dat je de Apache webserver herstart. Dit is nodig zodat de Apache webserver de zojuist aangepaste httpd_vhosts.conf configuratie file kan toepassen.  
+  
+Je kan nu, als alles goed gegaan is, het webadres http://wittekip.local gebruiken om je applicatie in de browser te openen/starten.  
