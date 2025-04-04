@@ -3,8 +3,8 @@
 
 class Database
 {
-   private static $dbHost = "127.0.0.1";
-   private static $dbName = "2324_wittekip";
+   private static $dbHost = "db";
+   private static $dbName = "webshop";
    private static $dbUser = "root";
    private static $dbPassword = "root";
 
