@@ -120,13 +120,11 @@ De terminal apps hierboven kun je op verschillende manier installeren.
 * **Mac OSX**  
   Je kunt onder het besturingssysteem Mac OSX b.v. gebruik maken van de terminal app [***HomeBrew***](https://brew.sh/). Je moet deze wel eerst installeren uiteraard.
 * **Windows**  
-  Onder windows kun je b.v. gebruik maken van de terminal app [***Cholotately***](https://community.chocolatey.org/) (wel eerste installeren). Er zijn ook alternatieven beschikbaar.  
+  Onder windows kun je b.v. gebruik maken van de terminal app [***Chocolately***](https://community.chocolatey.org/) (wel eerst installeren). Er zijn ook alternatieven beschikbaar.  
 * **Linux**  
   Onder Linux kun je ook [***HomeBrew***](https://docs.brew.sh/Homebrew-on-Linux) gebruiken. Linux heeft uiteraard al een standaard terminal manier om programma's te installeren, maar als je HomeBrew makkelijker vind is dit een optie.  
 
 In alle gevallen gaat het om zogenaamde app managers, waarmee je eenvoudig via de terminal programma's kunt installeren.  
-  
-We gaan ervan uit dat we werken met het Windows besturingssysteem.   
   
 ### Stap 1 - Installeren code  
 In een specifiek voor deze module aangemaakte projectmap openen we de terminal (CMD, PowerShell, Git Bash) en tikken de volgende opdracht in:  
