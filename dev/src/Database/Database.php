@@ -3,14 +3,15 @@
 
 class Database
 {
-   private static $dbHost = "db";
+   private static $dbHost = "localhost";
    private static $dbName = "webshop";
    private static $dbUser = "root";
-   private static $dbPassword = "root";
+   private static $dbPassword = "";
 
    private static $dbConnection = null;
    private static $dbStatement = null;
 
+   
    private static function connect(): bool
    {
       if (!is_null(self::$dbConnection)) {

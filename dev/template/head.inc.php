@@ -31,10 +31,10 @@
             <div class="uk-navbar-left">
                <ul class="uk-navbar-nav">
                   <li>
-                     <a href="/">
-                        <img class="logo" src="img/logo4.png" alt="Webshop Het Witte Kippetje" title="Webshop Het Witte Kippetje" />
-                        Het Witte Kippetje
-                     </a>
+                  <a href="index.html">
+                              <img class="logo" src="img/Webshop_Logo.png" alt="" title="Clothing Webshop" />
+                              Clothing Webshop
+                           </a>
                   </li>
                </ul>
             </div>
