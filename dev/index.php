@@ -57,15 +57,17 @@ $products = Database::getAll();
             <div class="uk-flex uk-flex-home uk-flex-wrap">
                <?php foreach ($products as $product) : ?>
                   <!-- PRODUCT KAART 1 -->
-                  <a class="product-card uk-card uk-card-home uk-card-default uk-card-small uk-card-hover" href="product.php?product_id=<?= $product->id ?>">
-                     <div class="uk-card-media-top uk-align-center">
-                        <img src="<?= $product->image ?>" alt="Witte kip" class="product-image uk-align-center">
-                     </div>
-                     <div class="uk-card-body uk-card-body-home">
-                        <p class="product-card-p"><?= substr($product->description, 0, 89) . '...' ?></p>
-                        <p class="product-card-p uk-text-large uk-text-bold uk-text-danger uk-text-right">&euro; <?= $product->price ?></p>
-                     </div>
+                  <a class="product-card uk-card uk-card-home uk-card-default uk-card-small uk-card-hover" href="product.php?product_id=<?= $product->productID ?>">
+                  <div class="uk-card-media-top uk-align-center">
+                  <img src="<?= $product->image ?? 'img/AnimeHoodie.jpg' ?>" alt="Product image" class="product-image uk-align-center">
+
+                  </div>
+                  <div class="uk-card-body uk-card-body-home">
+                  <p class="product-card-p"><?= substr($product->description, 0, 89) . '...' ?></p>
+                  <p class="product-card-p uk-text-large uk-text-bold uk-text-danger uk-text-right">&euro; <?= $product->price ?></p>
+                  </div>
                   </a>
+
                   <!-- EINDE PRODUCT KAART 1 -->
                <?php endforeach; ?>
             </div>

@@ -17,7 +17,7 @@ if (!isset($_GET['product_id'])) {
 $product_id = $_GET['product_id'];
 
 // Now get all the products
-Database::query("SELECT * FROM `products` WHERE `products`.`id` = :id", [':id' => $product_id]);
+Database::query("SELECT * FROM `products` WHERE `products`.`productID` = :id", [':id' => $product_id]);
 $product = Database::get();
 ?>
 
@@ -29,7 +29,7 @@ $product = Database::get();
          </section>
          <section class="uk-width-1-2 uk-card-body uk-flex uk-flex-column uk-flex-between">
             <div class="">
-               <h1><?= $product->name ?></h1>
+               <h1><?= $product->productname ?></h1>
                <p class="">
                   <?= $product->description ?>
                </p>
