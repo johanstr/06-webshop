@@ -36,20 +36,20 @@ $products = Database::getAll();
             <h4>Categoriën</h4>
             <hr class="uk-divider" />
             <div>
-               <input class="uk-checkbox" id="chickens" type="checkbox" name="chickens" />
-               <label for="chickens">Wedstrijd kippen</label>
+               <input class="uk-checkbox" id="hoodies" type="checkbox" name="hoodies" />
+               <label for="hoodies">Hoodies</label>
             </div>
             <div>
-               <input class="uk-checkbox" id="paint" type="checkbox" name="paint" />
-               <label for="paint">Verf</label>
+               <input class="uk-checkbox" id="pants" type="checkbox" name="pants" />
+               <label for="pants">Pants</label>
             </div>
             <div>
-               <input class="uk-checkbox" id="machines" type="checkbox" name="machines" />
-               <label for="machines">Broedmachines</label>
+               <input class="uk-checkbox" id="accecoires" type="checkbox" name="accecoires" />
+               <label for="accecoires">Accecoires</label>
             </div>
             <div>
-               <input class="uk-checkbox" id="hokken" type="checkbox" name="hokken" />
-               <label for="hokken">Hokken</label>
+               <input class="uk-checkbox" id="shoes" type="checkbox" name="shoes" />
+               <label for="shoes">Shoes</label>
             </div>
          </section>
          <section class="uk-width-4-5">
@@ -59,7 +59,7 @@ $products = Database::getAll();
                   <!-- PRODUCT KAART 1 -->
                   <a class="product-card uk-card uk-card-home uk-card-default uk-card-small uk-card-hover" href="product.php?product_id=<?= $product->productID ?>">
                   <div class="uk-card-media-top uk-align-center">
-                  <img src="<?= $product->image ?? 'img/AnimeHoodie.jpg' ?>" alt="Product image" class="product-image uk-align-center">
+                  <img src="data:AnimeHoodie/jpg;base64,<?= base64_encode($product->image) ?>" alt="Product image" class="product-image uk-align-center">
 
                   </div>
                   <div class="uk-card-body uk-card-body-home">

@@ -25,12 +25,12 @@ $product = Database::get();
    <section class="uk-width-1">
       <div class="uk-grid uk-card uk-card-default">
          <section class="uk-width-1-2 uk-card-media-left">
-            <img src="<?= $product->image ?>" class="" alt="" title="" />
+            <img src="data:AnimeHoodie/jpg;base64,<?= base64_encode($product->image) ?>" alt="Product image" class="product-image uk-align-center uk-width-1-1 uk-height-auto uk-object-cover">
          </section>
          <section class="uk-width-1-2 uk-card-body uk-flex uk-flex-column uk-flex-between">
-            <div class="">
+            <div>
                <h1><?= $product->productname ?></h1>
-               <p class="">
+               <p>
                   <?= $product->description ?>
                </p>
             </div>
