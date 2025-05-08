@@ -12,9 +12,17 @@ setLastVisitedPage();
 Database::query("SELECT * FROM `categories`");
 $categories = Database::getAll();
 
-// Now get all the products
-Database::query("SELECT * FROM `products`");
+$selectedCategories = isset($_GET['categories']) ? $_GET['categories'] : [];
+
+if (!empty($selectedCategories)) {
+   $placeholders = implode(',', array_fill(0, count($selectedCategories), '?'));
+   Database::query("SELECT * FROM `products` WHERE `category` IN ($placeholders)", $selectedCategories);
+} else {
+   Database::query("SELECT * FROM `products`");
+}
+
 $products = Database::getAll();
+
 
 ?>
       <?php if (hasMessage('success')): ?>
@@ -33,27 +41,47 @@ $products = Database::getAll();
 
       <div class="uk-grid">
          <section class="uk-width-1-5">
-            <h4>Categoriën</h4>
-            <hr class="uk-divider" />
-            <div>
-               <input class="uk-checkbox" id="hoodies" type="checkbox" name="hoodies" />
-               <label for="hoodies">Hoodies</label>
-            </div>
-            <div>
-               <input class="uk-checkbox" id="pants" type="checkbox" name="pants" />
-               <label for="pants">Pants</label>
-            </div>
-            <div>
-               <input class="uk-checkbox" id="accecoires" type="checkbox" name="accecoires" />
-               <label for="accecoires">Accecoires</label>
-            </div>
-            <div>
-               <input class="uk-checkbox" id="shoes" type="checkbox" name="shoes" />
-               <label for="shoes">Shoes</label>
-            </div>
+         <form method="GET" id="categoryForm">
+
+
+   <h4>Categoriën</h4>
+   <hr class="uk-divider" />
+   <div>
+      <input class="uk-checkbox" id="hoodies" type="checkbox" name="categories[]" value="hoodies"
+         onchange="document.getElementById('categoryForm').submit()" 
+         <?= in_array('hoodies', $selectedCategories ?? []) ? 'checked' : '' ?> />
+      <label for="hoodies">Hoodies</label>
+   </div>
+
+   <div>
+      <input class="uk-checkbox" id="pants" type="checkbox" name="categories[]" value="pants"
+         onchange="document.getElementById('categoryForm').submit()" 
+         <?= in_array('pants', $selectedCategories ?? []) ? 'checked' : '' ?> />
+      <label for="pants">Pants</label>
+   </div>
+   <div>
+      <input class="uk-checkbox" id="accesoires" type="checkbox" name="categories[]" value="accesoires"
+         onchange="document.getElementById('categoryForm').submit()" 
+         <?= in_array('accesoires', $selectedCategories ?? []) ? 'checked' : '' ?> />
+      <label for="accesoires">Accesoires</label>
+   </div>
+
+   <div>
+      <input class="uk-checkbox" id="shoes" type="checkbox" name="categories[]" value="shoes"
+         onchange="document.getElementById('categoryForm').submit()" 
+         <?= in_array('shoes', $selectedCategories ?? []) ? 'checked' : '' ?> />
+      <label for="shoes">Shoes</label>
+   </div>
+</form>
+
          </section>
          <section class="uk-width-4-5">
-            <h4 class="uk-text-muted uk-text-small">Gekozen categorieën: <span class="uk-text-small uk-text-primary">Alle</span></h4>
+            <h4 class="uk-text-muted uk-text-small">Gekozen categorieën: <?php  if (!empty($selectedCategories)) {
+               echo implode(', ', array_map('ucfirst', $selectedCategories)); }
+               else {
+                  echo 'Alle';
+               }
+               ?>
             <div class="uk-flex uk-flex-home uk-flex-wrap">
                <?php foreach ($products as $product) : ?>
                   <!-- PRODUCT KAART 1 -->
