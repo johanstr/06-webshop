@@ -11,7 +11,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>Webshop De Witte Kip</title>
+   <title>Clothing Webshop</title>
 
    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -20,6 +20,7 @@
 
    <link rel="stylesheet" href="css/uikit.min.css">
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/product.css">
 
 </head>
 

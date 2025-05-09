@@ -25,6 +25,17 @@ $products = Database::getAll();
 
 
 ?>
+
+      <!-- -- Css Styles -- -->
+         <style>
+         .product-image {
+          width: 100%;
+          height: 200px;
+          object-fit: contain;
+          }
+          </style>
+      <!-- -- Css Styles -- -->
+
       <?php if (hasMessage('success')): ?>
          <div class="uk-alert-success" uk-alert>
             <a href class="uk-alert-close" uk-close></a>
@@ -60,10 +71,10 @@ $products = Database::getAll();
       <label for="pants">Pants</label>
    </div>
    <div>
-      <input class="uk-checkbox" id="accesoires" type="checkbox" name="categories[]" value="accesoires"
+      <input class="uk-checkbox" id="accesoires" type="checkbox" name="categories[]" value="accessoires"
          onchange="document.getElementById('categoryForm').submit()" 
-         <?= in_array('accesoires', $selectedCategories ?? []) ? 'checked' : '' ?> />
-      <label for="accesoires">Accesoires</label>
+         <?= in_array('accessoires', $selectedCategories ?? []) ? 'checked' : '' ?> />
+      <label for="accessoires">Accessoires</label>
    </div>
 
    <div>
@@ -95,13 +106,7 @@ $products = Database::getAll();
                   </div>
                   </a>
                 
-                <style>
-                 .product-image {
-                  width: 100%;
-                  height: 200px;
-                  object-fit: contain;
-                  }
-                  </style>
+               
 
                   <!-- EINDE PRODUCT KAART 1 -->
                <?php endforeach; ?>
