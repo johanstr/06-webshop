@@ -1,3 +1,4 @@
+
 <?php
 
 @include_once(__DIR__.'/../Helpers/Auth.php');
@@ -5,6 +6,8 @@
 @include_once(__DIR__.'/../Database/Database.php');
 
 date_default_timezone_set('Europe/Amsterdam');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $is_error = false;
 
@@ -118,6 +121,11 @@ Database::insert('customers',[
    'email' => $email,
    'password' => password_hash($password, PASSWORD_DEFAULT)
 ]);
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
 
-header('Location: ../../login.php');
+
+// header('Location: ../../login.php');
+echo "Gebruiker succesvol geregistreerd";
 exit();

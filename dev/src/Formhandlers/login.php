@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST') {
    // We keren terug naar de login pagina
    setError('credentials-error', 'U dient via dit formulier in te loggen. Vul a.u.b. dit formulier in...');
    header('Location: ../../login.php');
-   exit();
+exit();
 }
 
 // CHECK 2 - CHECK benodigde gegevens

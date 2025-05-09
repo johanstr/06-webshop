@@ -55,7 +55,7 @@ $products = Database::getAll();
          <form method="GET" id="categoryForm">
 
 
-   <h3>Categoriën</h3>
+   <h3>Categorieën</h3>
    <hr class="uk-divider" />
    <div>
       <input class="uk-checkbox" id="hoodies" type="checkbox" name="categories[]" value="hoodies"

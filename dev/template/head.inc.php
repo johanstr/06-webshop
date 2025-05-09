@@ -32,7 +32,7 @@
             <div class="uk-navbar-left">
                <ul class="uk-navbar-nav">
                   <li>
-                  <a href="index.html">
+                  <a href="index.php">
                               <img class="logo" src="img/Webshop_Logo.png" alt="" title="Clothing Webshop" />
                               Clothing Webshop
                            </a>
