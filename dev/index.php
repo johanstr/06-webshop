@@ -44,7 +44,7 @@ $products = Database::getAll();
          <form method="GET" id="categoryForm">
 
 
-   <h4>Categoriën</h4>
+   <h3>Categoriën</h3>
    <hr class="uk-divider" />
    <div>
       <input class="uk-checkbox" id="hoodies" type="checkbox" name="categories[]" value="hoodies"
@@ -87,14 +87,21 @@ $products = Database::getAll();
                   <!-- PRODUCT KAART 1 -->
                   <a class="product-card uk-card uk-card-home uk-card-default uk-card-small uk-card-hover" href="product.php?product_id=<?= $product->productID ?>">
                   <div class="uk-card-media-top uk-align-center">
-                  <img src="data:AnimeHoodie/jpg;base64,<?= base64_encode($product->image) ?>" alt="Product image" class="product-image uk-align-center">
-
+                  <img src="data:image/jpeg;base64,<?= base64_encode($product->image) ?>" alt="Product image" class="product-image">
                   </div>
                   <div class="uk-card-body uk-card-body-home">
                   <p class="product-card-p"><?= substr($product->description, 0, 89) . '...' ?></p>
                   <p class="product-card-p uk-text-large uk-text-bold uk-text-danger uk-text-right">&euro; <?= $product->price ?></p>
                   </div>
                   </a>
+                
+                <style>
+                 .product-image {
+                  width: 100%;
+                  height: 200px;
+                  object-fit: contain;
+                  }
+                  </style>
 
                   <!-- EINDE PRODUCT KAART 1 -->
                <?php endforeach; ?>

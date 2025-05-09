@@ -21,6 +21,15 @@ Database::query("SELECT * FROM `products` WHERE `products`.`productID` = :id", [
 $product = Database::get();
 ?>
 
+
+<style>
+  .product-image {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+  }
+</style>
+
 <div class="uk-grid">
    <section class="uk-width-1">
       <div class="uk-grid uk-card uk-card-default">

@@ -3,9 +3,11 @@
 }
 
 .product-image {
-   width: 206px;
-   height: 206px;
-}
+   max-width: 100%;
+   height: auto;
+   display: block;
+   margin: 0 auto;
+ }
 
 .product-card, .product-card-p {
    text-decoration: none !important;
