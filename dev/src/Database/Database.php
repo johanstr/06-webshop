@@ -20,14 +20,42 @@ class Database
       }
 
       // Binnenhalen van de juiste db credentials uit de .INI file
-      $db_setup = parse_ini_file(__DIR__."/../../webshop.ini", true);
-      $db_root_key = 'DB_' . strtoupper($db_setup['ENVIRONMENT']['APP_ENV']);
 
-      if(array_key_exists($db_root_key, $db_setup)) {
-         self::$dbHost = (array_key_exists('host', $db_setup[$db_root_key]) ? $db_setup[$db_root_key]['host'] : '127.0.0.1');
-         self::$dbName = (array_key_exists('name', $db_setup[$db_root_key]) ? $db_setup[$db_root_key]['name'] : '2324_wittekip');
-         self::$dbUser = (array_key_exists('user', $db_setup[$db_root_key]) ? $db_setup[$db_root_key]['user'] : 'root');
-         self::$dbPassword = (array_key_exists('password', $db_setup[$db_root_key]) ? $db_setup[$db_root_key]['password'] : 'root');
+      // Binnenhalen van de inhoud van de file als een array
+      $app_ini = parse_ini_file(__DIR__."/../../webshop.ini", true);
+
+      // Samenstellen van de juiste key in de ini voor de gekozen db setup op basis van de APP_ENV
+      // Iedere key voor de db begint met DB_ met daarna de tekst local, docker of production
+      $db_ini_key = 'DB_' . strtoupper($app_ini['ENVIRONMENT']['APP_ENV']);
+
+      // Bestaat de samengestelde key wel, zo niet dan houden we de default setup voor de db
+      if(array_key_exists($db_ini_key, $app_ini)) {
+         // De samengestelde key bestaat. We halen nu de setup van de specifieke key binnen
+         // in de static properties, maar controleren wel steeds of de subkey wel bestaat.
+         // Zo niet dan behouden we steeds de default waarde.
+         self::$dbHost = (
+               array_key_exists('host', $app_ini[$db_ini_key]) ? 
+               $app_ini[$db_ini_key]['host'] : 
+               '127.0.0.1'
+            );
+
+         self::$dbName = (
+            array_key_exists('name', $app_ini[$db_ini_key]) ? 
+            $app_ini[$db_ini_key]['name'] : 
+            '2324_wittekip'
+         );
+
+         self::$dbUser = (
+            array_key_exists('user', $app_ini[$db_ini_key]) ? 
+            $app_ini[$db_ini_key]['user'] : 
+            'root'
+         );
+
+         self::$dbPassword = (
+            array_key_exists('password', $app_ini[$db_ini_key]) ? 
+            $app_ini[$db_ini_key]['password'] : 
+            'root'
+         );
       } 
 
       $pdo = null;
