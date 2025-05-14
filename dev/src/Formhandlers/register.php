@@ -8,7 +8,7 @@ date_default_timezone_set('Europe/Amsterdam');
 
 $is_error = false;
 
-// CHECK 1 - CHECK Request type
+// CHECK 1.1 - CHECK Request type
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
    // Geen POST-request dus stoppen we
    // We keren terug naar de login pagina

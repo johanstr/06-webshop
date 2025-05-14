@@ -3,8 +3,10 @@
 
 class Database
 {
-   private static $dbHost = "db";
-   private static $dbName = "webshop";
+   // Bevat default waarden, met webshop.ini kan dit gewijzigd worden
+   // webshop.ini is de configuratie file van de webshop
+   private static $dbHost = "127.0.0.1";
+   private static $dbName = "2324_wittekip";
    private static $dbUser = "root";
    private static $dbPassword = "root";
 
@@ -16,6 +18,17 @@ class Database
       if (!is_null(self::$dbConnection)) {
          return true;
       }
+
+      // Binnenhalen van de juiste db credentials uit de .INI file
+      $db_setup = parse_ini_file(__DIR__."/../../webshop.ini", true);
+      $db_root_key = 'DB_' . strtoupper($db_setup['ENVIRONMENT']['APP_ENV']);
+
+      if(array_key_exists($db_root_key, $db_setup)) {
+         self::$dbHost = (array_key_exists('host', $db_setup[$db_root_key]) ? $db_setup[$db_root_key]['host'] : '127.0.0.1');
+         self::$dbName = (array_key_exists('name', $db_setup[$db_root_key]) ? $db_setup[$db_root_key]['name'] : '2324_wittekip');
+         self::$dbUser = (array_key_exists('user', $db_setup[$db_root_key]) ? $db_setup[$db_root_key]['user'] : 'root');
+         self::$dbPassword = (array_key_exists('password', $db_setup[$db_root_key]) ? $db_setup[$db_root_key]['password'] : 'root');
+      } 
 
       $pdo = null;
       try {
