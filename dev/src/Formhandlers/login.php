@@ -4,6 +4,24 @@
 @include_once(__DIR__.'/../Helpers/Message.php');
 @include_once(__DIR__.'/../Database/Database.php');
 
+// Binnenhalen van de juiste db credentials uit de .INI file
+
+// Binnenhalen van de inhoud van de file als een array
+$app_ini = parse_ini_file(__DIR__."/../../webshop.ini", true);
+
+$url_key = 'URL_' . (
+   array_key_exists('APP_ENV', $app_ini['ENVIRONMENT']) ? 
+   strtoupper($app_ini['ENVIRONMENT']['APP_ENV']) : 
+   'LOCAL'
+);
+$current_url = $app_ini[$url_key]['URL'];
+
+// Check of de script uitgevoerd wordt vanaf onze domein
+if(str_contains(!$_SERVER['HTTP_REFERER'], $current_url)) {
+   header('Location: ../../403.php');
+   exit();
+}
+
 date_default_timezone_set('Europe/Amsterdam');
 
 // CHECK 1 - CHECK Request type
